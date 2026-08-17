@@ -1,0 +1,39 @@
+LumaWave Ads - Campaign Optimization Meeting Notes
+Meeting date: 2026-07-15
+Status: Fabricated capstone test data
+
+Participants
+- Campaign Operations
+- Measurement
+- Account Strategy
+- Creative Quality
+
+Campaign observations
+1. BluePeak Travel (CMP-002)
+   Mobile booking attribution events are arriving late. The measurement team will validate the server-to-server event mapping before the renewal review.
+
+2. GreenFork Market (CMP-003)
+   The team observed creative fatigue after week three. The next flight should rotate two new messages and run a controlled incrementality test.
+
+3. NovaLearn (CMP-004)
+   The bilingual creative produced the strongest completion-rate improvement in the East region. Account Strategy will prepare a language-segment comparison.
+
+4. CloudCart (CMP-007)
+   Audience overlap increased average frequency. Campaign Operations will broaden audience segments and enforce the standard frequency cap.
+
+5. WellSpring Health (CMP-008)
+   Contextual wellness podcast placements performed best. The team approved shifting 10,000 dollars of the next test budget from broad inventory to contextual inventory.
+
+Decisions
+- Do not make causal performance claims when attribution evidence is incomplete.
+- Preserve campaign identifiers in every analysis so findings can be traced to source rows.
+- Present both measured results and known data limitations during renewal discussions.
+- Escalate any restricted-category campaign before activation.
+
+Open actions
+- Measurement: resolve BluePeak Travel's mobile attribution mapping by 2026-07-29.
+- Creative Quality: deliver two GreenFork Market creative variants by 2026-07-25.
+- Account Strategy: prepare NovaLearn's bilingual segment readout by 2026-07-31.
+- Campaign Operations: apply the CloudCart frequency-control change before its next flight.
+
+This file and every organization, campaign, date, and metric in it are fictional.

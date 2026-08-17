@@ -1,0 +1,9 @@
+Campaign_ID,Advertiser,Campaign_Name,Region,Channel,Impressions,Clicks,Spend_USD,Conversions,Revenue_USD,Objective,Creative_Observation
+CMP-001,Horizon Fitness,New Year Momentum,East,Streaming Audio,500000,12500,50000,1000,120000,Trial subscriptions,Host-read creative drove strong trial intent.
+CMP-002,BluePeak Travel,Weekend Escapes,West,Podcast,400000,8000,45000,600,90000,Mobile bookings,Attribution lag was reported on mobile bookings.
+CMP-003,GreenFork Market,Fresh Week,Central,Display,600000,6000,30000,500,55000,Store visits,Creative fatigue appeared after week three.
+CMP-004,NovaLearn,Career Switch,East,Streaming Audio,300000,9000,40000,900,135000,Course enrollment,The bilingual creative improved completion rate.
+CMP-005,SunTrail Auto,Summer Drive,South,Video,800000,16000,90000,1200,180000,Test-drive requests,Dealer landing pages loaded slowly on mobile.
+CMP-006,BrightNest,Smart Home Launch,West,Podcast,250000,7500,35000,750,112500,Product orders,Promo-code attribution remained reliable.
+CMP-007,CloudCart,Holiday Seller,Central,Streaming Audio,700000,10500,70000,800,128000,Seller registrations,Audience overlap increased average frequency.
+CMP-008,WellSpring Health,Mindful Minutes,South,Podcast,350000,11200,38000,1050,157500,App trials,Contextual wellness placements performed best.

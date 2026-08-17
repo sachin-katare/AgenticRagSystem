@@ -1,0 +1,16 @@
+.venv/
+.env
+.idea/
+*.iml
+__pycache__/
+.pytest_cache/
+tmp/
+logs/*
+!logs/.gitkeep
+AgenticRagSystem_Submission.zip
+*.md
+!README.md
+data/uploads/*
+!data/uploads/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
