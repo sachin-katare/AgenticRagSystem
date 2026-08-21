@@ -29,6 +29,7 @@ $includePaths = @(
     "requirements-resolved.txt",
     "app",
     "data",
+    "logs",
     "docs",
     "sample_data",
     "scripts",
@@ -56,6 +57,12 @@ $excludedFileNames = @(
     "document_catalogue.json"
 )
 
+$preservedPlaceholderFiles = @(
+    "logs\.gitkeep",
+    "data\chroma\.gitkeep",
+    "data\uploads\.gitkeep"
+)
+
 $excludedExtensions = @(
     ".pyc",
     ".pyo"
@@ -76,6 +83,10 @@ function Test-IsExcluded {
     $fileName = Split-Path -Leaf $normalizedPath
     $extension = [System.IO.Path]::GetExtension($fileName)
     $pathSegments = $normalizedPath.Split('\')
+
+    if ($preservedPlaceholderFiles -contains $normalizedPath) {
+        return $false
+    }
 
     if ($excludedFileNames -contains $fileName) {
         return $true
