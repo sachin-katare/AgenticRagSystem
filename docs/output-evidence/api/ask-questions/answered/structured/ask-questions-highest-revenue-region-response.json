@@ -1,0 +1,15 @@
+{
+  "question": "Which region has the highest revenue?",
+  "answer": "The structured table result is Region: South, Revenue_USD: 337500.0. Used sales.csv. Grouped by Region, summed Revenue_USD, and selected the highest group.",
+  "citation_count": 0,
+  "citations": [],
+  "status": "answered",
+  "trace": [
+    "Validator(input)",
+    "Planner(route=structured)",
+    "Retriever",
+    "Reasoner",
+    "Responder",
+    "Validator(output)"
+  ]
+}

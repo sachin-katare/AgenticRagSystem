@@ -2,6 +2,8 @@ from typing import Any
 
 import requests
 
+from app.services.exceptions import ExternalServiceError
+
 
 class OllamaEmbeddingService:
     """Client for Ollama's local embedding API."""
@@ -15,12 +17,18 @@ class OllamaEmbeddingService:
         if not text.strip():
             raise ValueError("Cannot embed empty text.")
 
-        response = requests.post(
-            f"{self._base_url}/api/embeddings",
-            json={"model": self._model, "prompt": text},
-            timeout=self._timeout_seconds,
-        )
-        response.raise_for_status()
+        try:
+            response = requests.post(
+                f"{self._base_url}/api/embeddings",
+                json={"model": self._model, "prompt": text},
+                timeout=self._timeout_seconds,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            raise ExternalServiceError(
+                "Ollama embedding service is unavailable. Please confirm Ollama is running "
+                "and the configured embedding model is installed."
+            ) from exc
 
         payload: dict[str, Any] = response.json()
         embedding = payload.get("embedding")

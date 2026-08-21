@@ -1,0 +1,82 @@
+{
+  "question": "What is the average age of listeners?",
+  "answer": "I don't have enough information to determine the average age of listeners. The provided evidence does not mention the age of listeners, and there is no relevant data on the topic. [1] states that the default cap is four impressions per listener in a rolling seven-day window, but it does not provide any information on the age of the listeners. [2] provides data on campaign performance, but it does not include any information on the age of the listeners. [3] and [4] provide data on renewal and campaign performance, but they also do not mention the age of the listeners.\n\nTherefore, based on the provided evidence, I am unable to provide an average age of listeners.",
+  "citation_count": 4,
+  "citations": [
+    {
+      "chunk_id": "25aa56cb-31d1-4646-acb0-c2321c25fcc8",
+      "text": "Health, financial-services, alcohol, and political content is restricted and requires documented eligibility, targeting, and compliance review before activation. 4. Frequency and audience controls The default cap is four impressions per listener in a rolling seven-day window. A higher cap requires a documented experiment and campaign-owner approval. Sensitive personal characteristics must not be used for targeting. Audience definitions must rely on approved contextual or consented first-party signals. Control Default Exception owner Standard approval 2 business days Campaign Operations Regulated/high-risk approval Up to 4 business days Legal or Compliance Frequency cap 4 impressions / 7 days Campaign Owner",
+      "metadata": {
+        "chunk_size": 1000,
+        "chunk_index": 1,
+        "chunk_overlap": 150,
+        "source_type": "pdf",
+        "unit_index": 0,
+        "page": 1,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "type": "pdf",
+        "file": "policy.pdf"
+      },
+      "distance": 0.45327794551849365
+    },
+    {
+      "chunk_id": "35c96cc3-faaf-4bfe-b1de-e3845ce4f3eb",
+      "text": "Campaign_ID: CMP-007; Advertiser: CloudCart; Campaign_Name: Holiday Seller; Region: Central; Channel: Streaming Audio; Impressions: 700000; Clicks: 10500; Spend_USD: 70000; Conversions: 800; Revenue_USD: 128000; Objective: Seller registrations; Creative_Observation: Audience overlap increased average frequency.",
+      "metadata": {
+        "row": 8,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "chunk_size": 1000,
+        "type": "csv",
+        "file": "sales.csv",
+        "source_type": "csv",
+        "chunk_index": 0,
+        "unit_index": 6,
+        "chunk_overlap": 150
+      },
+      "distance": 0.4635622501373291
+    },
+    {
+      "chunk_id": "5bf4cfb4-ce15-40fe-917c-b168937027c3",
+      "text": "Renewal_ID: REN-007; Advertiser: CloudCart; Region: Central; Account_Manager: Jordan Patel; Renewal_Date: 2026-08-25 00:00:00; Annual_Value_USD: 200000; Risk_Level: High; Status: At Risk; Last_Campaign_ID: CMP-007; Concern: Audience saturation increased frequency beyond the client preference.; Recommended_Action: Broaden audience segments and apply a frequency cap.; Attribution_Mention: No",
+      "metadata": {
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "unit_index": 6,
+        "chunk_size": 1000,
+        "source_type": "xlsx",
+        "file": "renewals.xlsx",
+        "chunk_index": 0,
+        "type": "xlsx",
+        "row": 8,
+        "sheet": "Renewals",
+        "chunk_overlap": 150
+      },
+      "distance": 0.47866153717041016
+    },
+    {
+      "chunk_id": "c19e806a-802f-4188-ab74-78880e9fdd61",
+      "text": "Renewal_ID: REN-006; Advertiser: BrightNest; Region: West; Account_Manager: Morgan Lee; Renewal_Date: 2026-12-12 00:00:00; Annual_Value_USD: 175000; Risk_Level: Low; Status: Open; Last_Campaign_ID: CMP-006; Concern: No material concern; promo-code measurement is stable.; Recommended_Action: Propose a podcast and streaming-audio bundle.; Attribution_Mention: No",
+      "metadata": {
+        "unit_index": 5,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "row": 7,
+        "sheet": "Renewals",
+        "chunk_size": 1000,
+        "chunk_index": 0,
+        "source_type": "xlsx",
+        "type": "xlsx",
+        "file": "renewals.xlsx",
+        "chunk_overlap": 150
+      },
+      "distance": 0.49514341354370117
+    }
+  ],
+  "status": "insufficient_evidence",
+  "trace": [
+    "Validator(input)",
+    "Planner(route=structured)",
+    "Retriever",
+    "Reasoner",
+    "Responder",
+    "Validator(output)"
+  ]
+}

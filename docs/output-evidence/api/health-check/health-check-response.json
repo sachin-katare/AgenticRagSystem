@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "app_name": "Agentic RAG System",
+  "llm_provider": "ollama",
+  "chat_model": "llama3.2:3b",
+  "embedding_model": "nomic-embed-text"
+}

@@ -1,0 +1,81 @@
+{
+  "question": "What approval rules apply to high-risk campaigns?",
+  "answer": "Regulated/high-risk approval.\n\n[1] and [2]",
+  "citation_count": 4,
+  "citations": [
+    {
+      "chunk_id": "25aa56cb-31d1-4646-acb0-c2321c25fcc8",
+      "text": "Health, financial-services, alcohol, and political content is restricted and requires documented eligibility, targeting, and compliance review before activation. 4. Frequency and audience controls The default cap is four impressions per listener in a rolling seven-day window. A higher cap requires a documented experiment and campaign-owner approval. Sensitive personal characteristics must not be used for targeting. Audience definitions must rely on approved contextual or consented first-party signals. Control Default Exception owner Standard approval 2 business days Campaign Operations Regulated/high-risk approval Up to 4 business days Legal or Compliance Frequency cap 4 impressions / 7 days Campaign Owner",
+      "metadata": {
+        "chunk_overlap": 150,
+        "chunk_index": 1,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "type": "pdf",
+        "chunk_size": 1000,
+        "file": "policy.pdf",
+        "page": 1,
+        "source_type": "pdf",
+        "unit_index": 0
+      },
+      "distance": 0.28637027740478516
+    },
+    {
+      "chunk_id": "8f178fc6-5ba5-4174-b08c-e72a141c5d30",
+      "text": "LumaWave Ads - Fictional Capstone Test Corpus Page 1 LumaWave Ads Campaign Governance and Brand Safety Policy Version 1.0 | Effective 2026-07-01 | Fictional training document 1. Purpose and scope This policy defines approval, brand-safety, privacy, measurement, and retention rules for fictional advertising campaigns managed by LumaWave Ads. It applies to streaming audio, podcast, display, and video placements in the capstone sample corpus. 2. Campaign approval - Standard campaigns must be reviewed within two business days after complete creative and targeting materials are received. - Regulated or high-risk campaigns require legal or compliance review and may take up to four business days. - A human approver must sign off before any regulated, high-risk, or AI-assisted creative is activated. 3. Prohibited and restricted content Campaigns promoting illegal drugs, tobacco products, weapons, or deliberately misleading financial claims are prohibited.",
+      "metadata": {
+        "chunk_size": 1000,
+        "chunk_index": 0,
+        "unit_index": 0,
+        "chunk_overlap": 150,
+        "source_type": "pdf",
+        "type": "pdf",
+        "file": "policy.pdf",
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "page": 1
+      },
+      "distance": 0.3131445050239563
+    },
+    {
+      "chunk_id": "d1b84787-b2b7-48ba-9f51-4d369d50d44d",
+      "text": "7. Data retention and privacy Raw campaign event data is retained for 90 days. Aggregated, non-identifying campaign reports may be retained for 13 months for trend analysis and renewal planning. Uploaded files must exclude passwords, authentication tokens, payment-card data, and unapproved personal information. Access should be limited to authorized campaign and measurement personnel. 8. Escalation and exceptions Potential policy violations must be paused and escalated to Campaign Operations. Legal or Compliance decides whether restricted content may proceed. Every exception must identify its owner, rationale, scope, and expiration date. 9. Document status This document is fabricated solely for local capstone testing. LumaWave Ads and all referenced organizations are fictional.",
+      "metadata": {
+        "chunk_size": 1000,
+        "chunk_index": 1,
+        "page": 2,
+        "source_type": "pdf",
+        "unit_index": 1,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "type": "pdf",
+        "chunk_overlap": 150,
+        "file": "policy.pdf"
+      },
+      "distance": 0.3560675382614136
+    },
+    {
+      "chunk_id": "cc9178ee-2735-4ce8-90da-e426e48559f9",
+      "text": "Field: Risk_Level; Meaning: Low, Medium, or High; RAG / analysis use: Filter and hybrid questions",
+      "metadata": {
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "unit_index": 25,
+        "chunk_overlap": 150,
+        "file": "renewals.xlsx",
+        "chunk_index": 0,
+        "chunk_size": 1000,
+        "source_type": "xlsx",
+        "row": 8,
+        "type": "xlsx",
+        "sheet": "Data Dictionary"
+      },
+      "distance": 0.3832651376724243
+    }
+  ],
+  "status": "answered",
+  "trace": [
+    "Validator(input)",
+    "Planner(route=rag)",
+    "Retriever",
+    "Reasoner",
+    "Responder",
+    "Validator(output)"
+  ]
+}

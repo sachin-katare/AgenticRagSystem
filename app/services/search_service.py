@@ -2,8 +2,13 @@ from dataclasses import dataclass
 from typing import Protocol
 
 from app.core.config import Settings
+from app.core.logging_config import get_logger
 from app.services.embedding_service import OllamaEmbeddingService
 from app.services.vector_store import SearchResult, VectorStore
+from app.utils.safe_logging import safe_log_fields
+
+
+logger = get_logger()
 
 
 class EmbeddingClient(Protocol):
@@ -48,5 +53,23 @@ class SearcherService:
 
         query_embedding = self._embedding_client.embed_text(clean_question)
         matches = self._vector_store.search(query_embedding, limit=limit)
+        source_files = sorted(
+            {
+                str(match.metadata.get("file"))
+                for match in matches
+                if match.metadata.get("file")
+            }
+        )
+        logger.info(
+            "search_completed %s",
+            safe_log_fields(
+                {
+                    "route": "rag",
+                    "limit": limit,
+                    "match_count": len(matches),
+                    "source_files": source_files,
+                }
+            ),
+        )
 
         return SearcherResult(question=clean_question, matches=matches)

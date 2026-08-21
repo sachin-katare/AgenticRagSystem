@@ -1,0 +1,15 @@
+{
+  "question": "How many high-risk renewals mention attribution issues?",
+  "answer": "The hybrid table result is 3. Used renewals.xlsx sheet 'Renewals'. Applied exact filters Risk_Level=High, then counted rows containing semantic term(s): attribution.",
+  "citation_count": 0,
+  "citations": [],
+  "status": "answered",
+  "trace": [
+    "Validator(input)",
+    "Planner(route=hybrid)",
+    "Retriever",
+    "Reasoner",
+    "Responder",
+    "Validator(output)"
+  ]
+}

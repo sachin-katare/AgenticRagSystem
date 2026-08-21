@@ -1,0 +1,8 @@
+2026-08-20 17:07:14,312 WARNING agentic_rag_system upload_document_duplicate_rejected {'route': '/upload-document', 'filename': 'sales.csv', 'existing_document_id': '4ec47898-5762-4f92-80c9-b84b6c08d437', 'existing_filename': 'sales.csv'}
+2026-08-20 17:07:48,322 WARNING agentic_rag_system upload_document_rejected {'route': '/upload-document', 'filename': 'empty.txt', 'reason': 'Uploaded file is empty.'}
+2026-08-20 17:08:22,126 WARNING agentic_rag_system upload_document_rejected {'route': '/upload-document', 'filename': 'dummy.json', 'reason': 'Unsupported file type. Allowed extensions: .csv, .pdf, .txt, .xlsx.'}
+
+2026-08-20 17:44:14,849 WARNING agentic_rag_system replier_citation_repair_started {'available_citation_count': 4}
+
+2026-08-20 17:51:03,461 WARNING agentic_rag_system replier_citation_repair_started {'available_citation_count': 4}
+2026-08-20 17:51:20,892 WARNING agentic_rag_system replier_model_claimed_insufficient_evidence {'citation_count': 4}

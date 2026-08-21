@@ -1,0 +1,138 @@
+2026-08-20 17:02:51,950 INFO agentic_rag_system health_check {'route': '/health-check', 'status': 'ok'}
+2026-08-20 17:04:14,082 INFO agentic_rag_system indexing_chunks_created {'filename': 'notes.txt', 'source_type': 'txt', 'extracted_unit_count': 1, 'chunk_count': 2}
+2026-08-20 17:04:19,603 INFO agentic_rag_system indexing_completed {'filename': 'notes.txt', 'source_type': 'txt', 'indexed_chunk_count': 2}
+2026-08-20 17:04:19,606 INFO agentic_rag_system upload_document_completed {'route': '/upload-document', 'document_id': '1a4500fd-ca6e-4f56-a05c-0fa33780ea77', 'filename': 'notes.txt', 'source_type': 'txt', 'extracted_unit_count': 1, 'tabular_schema_count': 0, 'indexed_chunk_count': 2}
+2026-08-20 17:04:41,557 INFO agentic_rag_system indexing_chunks_created {'filename': 'policy.pdf', 'source_type': 'pdf', 'extracted_unit_count': 2, 'chunk_count': 4}
+2026-08-20 17:04:50,770 INFO agentic_rag_system indexing_completed {'filename': 'policy.pdf', 'source_type': 'pdf', 'indexed_chunk_count': 4}
+2026-08-20 17:04:50,772 INFO agentic_rag_system upload_document_completed {'route': '/upload-document', 'document_id': 'a88556f1-eb07-4c77-abfa-6fffcc703d1f', 'filename': 'policy.pdf', 'source_type': 'pdf', 'extracted_unit_count': 2, 'tabular_schema_count': 0, 'indexed_chunk_count': 4}
+2026-08-20 17:05:09,840 INFO agentic_rag_system indexing_chunks_created {'filename': 'renewals.xlsx', 'source_type': 'xlsx', 'extracted_unit_count': 31, 'chunk_count': 31}
+2026-08-20 17:06:17,836 INFO agentic_rag_system indexing_completed {'filename': 'renewals.xlsx', 'source_type': 'xlsx', 'indexed_chunk_count': 31}
+2026-08-20 17:06:17,837 INFO agentic_rag_system upload_document_completed {'route': '/upload-document', 'document_id': 'e4b19e8f-3ad4-44cd-b631-7729f6fb1bed', 'filename': 'renewals.xlsx', 'source_type': 'xlsx', 'extracted_unit_count': 31, 'tabular_schema_count': 3, 'indexed_chunk_count': 31}
+2026-08-20 17:06:37,544 INFO agentic_rag_system indexing_chunks_created {'filename': 'sales.csv', 'source_type': 'csv', 'extracted_unit_count': 8, 'chunk_count': 8}
+2026-08-20 17:06:55,128 INFO agentic_rag_system indexing_completed {'filename': 'sales.csv', 'source_type': 'csv', 'indexed_chunk_count': 8}
+2026-08-20 17:06:55,131 INFO agentic_rag_system upload_document_completed {'route': '/upload-document', 'document_id': '4ec47898-5762-4f92-80c9-b84b6c08d437', 'filename': 'sales.csv', 'source_type': 'csv', 'extracted_unit_count': 8, 'tabular_schema_count': 1, 'indexed_chunk_count': 8}
+2026-08-20 17:07:14,312 WARNING agentic_rag_system upload_document_duplicate_rejected {'route': '/upload-document', 'filename': 'sales.csv', 'existing_document_id': '4ec47898-5762-4f92-80c9-b84b6c08d437', 'existing_filename': 'sales.csv'}
+2026-08-20 17:07:48,322 WARNING agentic_rag_system upload_document_rejected {'route': '/upload-document', 'filename': 'empty.txt', 'reason': 'Uploaded file is empty.'}
+2026-08-20 17:08:22,126 WARNING agentic_rag_system upload_document_rejected {'route': '/upload-document', 'filename': 'dummy.json', 'reason': 'Unsupported file type. Allowed extensions: .csv, .pdf, .txt, .xlsx.'}
+
+2026-08-20 17:15:12,447 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:15:12,449 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:15:15,431 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['renewals.xlsx']}
+2026-08-20 17:15:15,432 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:15:33,228 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:15:33,229 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:15:33,230 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:15:33,232 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:15:33,233 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+
+2026-08-20 17:37:06,720 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:37:06,722 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:37:09,836 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['renewals.xlsx', 'sales.csv']}
+2026-08-20 17:37:09,837 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:37:25,707 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:37:25,708 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:37:25,710 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:37:25,711 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:37:25,713 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:38:05,923 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:38:05,924 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:38:08,052 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['policy.pdf', 'sales.csv']}
+2026-08-20 17:38:08,053 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:38:30,987 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:38:30,987 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:38:30,989 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:38:30,989 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:38:30,990 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:40:09,485 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:40:09,486 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:40:11,722 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['renewals.xlsx', 'sales.csv']}
+2026-08-20 17:40:11,723 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:40:21,443 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:40:21,444 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:40:21,445 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:40:21,446 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:40:21,447 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:40:59,369 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:40:59,370 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:41:01,502 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['notes.txt', 'sales.csv']}
+2026-08-20 17:41:01,503 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:41:10,619 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:41:10,620 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:41:10,621 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:41:10,622 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:41:10,623 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:41:44,202 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:41:44,203 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:41:46,335 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['policy.pdf', 'renewals.xlsx']}
+2026-08-20 17:41:46,335 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:41:56,343 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:41:56,344 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:41:56,345 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:41:56,346 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:41:56,347 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:42:32,766 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:42:32,766 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:42:34,918 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['renewals.xlsx', 'sales.csv']}
+2026-08-20 17:42:34,918 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:42:42,944 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:42:42,944 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:42:42,945 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:42:42,947 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:42:42,948 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:44:01,436 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:44:01,437 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:44:03,655 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['policy.pdf', 'sales.csv']}
+2026-08-20 17:44:03,656 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:44:14,849 WARNING agentic_rag_system replier_citation_repair_started {'available_citation_count': 4}
+2026-08-20 17:44:39,562 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': True}
+2026-08-20 17:44:39,563 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:44:39,565 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:44:39,566 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:44:39,566 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+
+2026-08-20 17:47:51,008 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:47:51,009 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'structured', 'classification_reason': 'The question asks for an exact table calculation.'}
+2026-08-20 17:47:51,261 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'structured'}
+2026-08-20 17:47:51,266 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:47:51,268 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 0, 'trace': ['Validator(input)', 'Planner(route=structured)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:48:16,545 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:48:16,546 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'structured', 'classification_reason': 'The question asks for an exact table calculation.'}
+2026-08-20 17:48:16,607 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'structured'}
+2026-08-20 17:48:16,610 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:48:16,612 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 0, 'trace': ['Validator(input)', 'Planner(route=structured)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:48:42,428 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:48:42,429 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'structured', 'classification_reason': 'The question asks for an exact table calculation.'}
+2026-08-20 17:48:42,968 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'structured'}
+2026-08-20 17:48:42,969 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:48:42,971 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 0, 'trace': ['Validator(input)', 'Planner(route=structured)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:49:08,436 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:49:08,436 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'structured', 'classification_reason': 'The question asks for an exact table calculation.'}
+2026-08-20 17:49:08,461 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'structured'}
+2026-08-20 17:49:08,463 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:49:08,464 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 0, 'trace': ['Validator(input)', 'Planner(route=structured)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+
+2026-08-20 17:49:55,690 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:49:55,691 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'hybrid', 'classification_reason': 'The question combines semantic meaning with a deterministic calculation.'}
+2026-08-20 17:49:55,735 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'hybrid'}
+2026-08-20 17:49:55,737 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:49:55,738 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 0, 'trace': ['Validator(input)', 'Planner(route=hybrid)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+
+2026-08-20 17:50:43,540 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:50:43,541 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'structured', 'classification_reason': 'The question asks for an exact table calculation.'}
+2026-08-20 17:50:46,579 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['policy.pdf', 'renewals.xlsx', 'sales.csv']}
+2026-08-20 17:50:46,580 INFO agentic_rag_system agent_retriever_fallback_completed {'agent': 'Retriever', 'from_route': 'structured', 'to_route': 'rag', 'match_count': 4}
+2026-08-20 17:51:03,461 WARNING agentic_rag_system replier_citation_repair_started {'available_citation_count': 4}
+2026-08-20 17:51:20,892 WARNING agentic_rag_system replier_model_claimed_insufficient_evidence {'citation_count': 4}
+2026-08-20 17:51:20,893 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'insufficient_evidence'}
+2026-08-20 17:51:20,894 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'insufficient_evidence', 'citation_count': 4}
+2026-08-20 17:51:20,895 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'insufficient_evidence'}
+2026-08-20 17:51:20,896 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'insufficient_evidence', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=structured)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}
+2026-08-20 17:52:30,564 INFO agentic_rag_system agent_input_validation_completed {'agent': 'Validator(input)', 'status': 'accepted'}
+2026-08-20 17:52:30,564 INFO agentic_rag_system agent_planner_completed {'agent': 'Planner', 'route': 'rag', 'classification_reason': 'The question asks for meaning or explanation from document text.'}
+2026-08-20 17:52:32,765 INFO agentic_rag_system search_completed {'route': 'rag', 'limit': 4, 'match_count': 4, 'source_files': ['policy.pdf', 'renewals.xlsx']}
+2026-08-20 17:52:32,766 INFO agentic_rag_system agent_retriever_completed {'agent': 'Retriever', 'route': 'rag', 'match_count': 4}
+2026-08-20 17:52:46,269 INFO agentic_rag_system replier_answer_completed {'citation_count': 4, 'citation_repair_attempted': False}
+2026-08-20 17:52:46,270 INFO agentic_rag_system agent_reasoner_completed {'agent': 'Reasoner', 'route': 'rag', 'status': 'answered'}
+2026-08-20 17:52:46,271 INFO agentic_rag_system agent_responder_completed {'agent': 'Responder', 'status': 'answered', 'citation_count': 4}
+2026-08-20 17:52:46,272 INFO agentic_rag_system agent_output_validation_completed {'agent': 'Validator(output)', 'status': 'answered'}
+2026-08-20 17:52:46,273 INFO agentic_rag_system ask_questions_completed {'route': '/ask-questions', 'status': 'answered', 'citation_count': 4, 'trace': ['Validator(input)', 'Planner(route=rag)', 'Retriever', 'Reasoner', 'Responder', 'Validator(output)']}

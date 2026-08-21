@@ -1,6 +1,8 @@
 import requests
+import pytest
 
 from app.services.chat_service import OllamaChatService
+from app.services.exceptions import ExternalServiceError
 
 
 class FakeResponse:
@@ -47,3 +49,17 @@ def test_ollama_chat_service_rejects_empty_prompt() -> None:
         assert "Prompt cannot be empty" in str(exc)
     else:
         raise AssertionError("Expected ValueError for empty prompt.")
+
+
+def test_ollama_chat_service_wraps_request_failures(monkeypatch) -> None:
+    def fake_post(url, json, timeout):
+        raise requests.ConnectionError("connection refused")
+
+    monkeypatch.setattr(requests, "post", fake_post)
+    service = OllamaChatService(
+        base_url="http://localhost:11434",
+        model="llama3.2:3b",
+    )
+
+    with pytest.raises(ExternalServiceError, match="Ollama chat service is unavailable"):
+        service.generate("Question and evidence")

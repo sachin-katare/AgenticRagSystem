@@ -1,8 +1,10 @@
 from unittest.mock import Mock
 
 import pytest
+import requests
 
 from app.services.embedding_service import OllamaEmbeddingService
+from app.services.exceptions import ExternalServiceError
 
 
 def test_embed_text_calls_ollama_embedding_endpoint(monkeypatch) -> None:
@@ -66,3 +68,17 @@ def test_embed_texts_embeds_each_text(monkeypatch) -> None:
     embeddings = service.embed_texts(["first text", "second text"])
 
     assert embeddings == [[1.0, 0.0], [0.0, 1.0]]
+
+
+def test_embed_text_wraps_request_failures(monkeypatch) -> None:
+    monkeypatch.setattr(
+        "app.services.embedding_service.requests.post",
+        Mock(side_effect=requests.ConnectionError("connection refused")),
+    )
+    service = OllamaEmbeddingService(
+        base_url="http://localhost:11434",
+        model="nomic-embed-text",
+    )
+
+    with pytest.raises(ExternalServiceError, match="Ollama embedding service is unavailable"):
+        service.embed_text("campaign policy")

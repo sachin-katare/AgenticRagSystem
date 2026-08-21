@@ -2,6 +2,8 @@ from typing import Any
 
 import requests
 
+from app.services.exceptions import ExternalServiceError
+
 
 class OllamaChatService:
     """Client for Ollama's local chat-generation API."""
@@ -15,16 +17,22 @@ class OllamaChatService:
         if not prompt.strip():
             raise ValueError("Prompt cannot be empty.")
 
-        response = requests.post(
-            f"{self._base_url}/api/generate",
-            json={
-                "model": self._model,
-                "prompt": prompt,
-                "stream": False,
-            },
-            timeout=self._timeout_seconds,
-        )
-        response.raise_for_status()
+        try:
+            response = requests.post(
+                f"{self._base_url}/api/generate",
+                json={
+                    "model": self._model,
+                    "prompt": prompt,
+                    "stream": False,
+                },
+                timeout=self._timeout_seconds,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            raise ExternalServiceError(
+                "Ollama chat service is unavailable. Please confirm Ollama is running "
+                "and the configured chat model is installed."
+            ) from exc
 
         payload: dict[str, Any] = response.json()
         generated_text = payload.get("response")

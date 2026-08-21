@@ -1,0 +1,82 @@
+{
+  "question": "Which advertiser needs server-to-server event mapping validated?",
+  "answer": "BluePeak Travel. [1]",
+  "citation_count": 4,
+  "citations": [
+    {
+      "chunk_id": "c5c543e7-2ac6-461e-abf7-553e6b170684",
+      "text": "Renewal_ID: REN-002; Advertiser: BluePeak Travel; Region: West; Account_Manager: Morgan Lee; Renewal_Date: 2026-08-31 00:00:00; Annual_Value_USD: 150000; Risk_Level: High; Status: At Risk; Last_Campaign_ID: CMP-002; Concern: Mobile booking attribution mismatch delayed performance reporting.; Recommended_Action: Validate server-to-server event mapping before renewal review.; Attribution_Mention: Yes",
+      "metadata": {
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "chunk_index": 0,
+        "unit_index": 1,
+        "chunk_overlap": 150,
+        "row": 3,
+        "source_type": "xlsx",
+        "type": "xlsx",
+        "file": "renewals.xlsx",
+        "chunk_size": 1000,
+        "sheet": "Renewals"
+      },
+      "distance": 0.3458293676376343
+    },
+    {
+      "chunk_id": "35c96cc3-faaf-4bfe-b1de-e3845ce4f3eb",
+      "text": "Campaign_ID: CMP-007; Advertiser: CloudCart; Campaign_Name: Holiday Seller; Region: Central; Channel: Streaming Audio; Impressions: 700000; Clicks: 10500; Spend_USD: 70000; Conversions: 800; Revenue_USD: 128000; Objective: Seller registrations; Creative_Observation: Audience overlap increased average frequency.",
+      "metadata": {
+        "type": "csv",
+        "chunk_index": 0,
+        "chunk_size": 1000,
+        "chunk_overlap": 150,
+        "unit_index": 6,
+        "row": 8,
+        "source_type": "csv",
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "file": "sales.csv"
+      },
+      "distance": 0.37052595615386963
+    },
+    {
+      "chunk_id": "885be265-5059-41b2-98f4-7df8af3630ad",
+      "text": "Campaign_ID: CMP-006; Advertiser: BrightNest; Campaign_Name: Smart Home Launch; Region: West; Channel: Podcast; Impressions: 250000; Clicks: 7500; Spend_USD: 35000; Conversions: 750; Revenue_USD: 112500; Objective: Product orders; Creative_Observation: Promo-code attribution remained reliable.",
+      "metadata": {
+        "chunk_overlap": 150,
+        "type": "csv",
+        "chunk_size": 1000,
+        "unit_index": 5,
+        "file": "sales.csv",
+        "source_type": "csv",
+        "row": 7,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "chunk_index": 0
+      },
+      "distance": 0.38253331184387207
+    },
+    {
+      "chunk_id": "a91a8a46-8bf0-4f99-aa34-b0ef10068cee",
+      "text": "Renewal_ID: REN-003; Advertiser: GreenFork Market; Region: Central; Account_Manager: Jordan Patel; Renewal_Date: 2026-10-20 00:00:00; Annual_Value_USD: 95000; Risk_Level: High; Status: At Risk; Last_Campaign_ID: CMP-003; Concern: The attribution model cannot reconcile display view-through conversions.; Recommended_Action: Run a controlled incrementality test and refresh creative.; Attribution_Mention: Yes",
+      "metadata": {
+        "type": "xlsx",
+        "sheet": "Renewals",
+        "file": "renewals.xlsx",
+        "source_type": "xlsx",
+        "chunk_index": 0,
+        "row": 4,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "chunk_size": 1000,
+        "chunk_overlap": 150,
+        "unit_index": 2
+      },
+      "distance": 0.38958853483200073
+    }
+  ],
+  "status": "answered",
+  "trace": [
+    "Validator(input)",
+    "Planner(route=rag)",
+    "Retriever",
+    "Reasoner",
+    "Responder",
+    "Validator(output)"
+  ]
+}

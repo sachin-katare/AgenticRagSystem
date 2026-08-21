@@ -1,0 +1,79 @@
+{
+  "question": "Which campaign showed creative fatigue?",
+  "answer": "Creative fatigue appeared after week three. [1]",
+  "citation_count": 4,
+  "citations": [
+    {
+      "chunk_id": "5952351d-fae8-4546-9a6a-4e9b72f19b70",
+      "text": "Campaign_ID: CMP-003; Advertiser: GreenFork Market; Campaign_Name: Fresh Week; Region: Central; Channel: Display; Impressions: 600000; Clicks: 6000; Spend_USD: 30000; Conversions: 500; Revenue_USD: 55000; Objective: Store visits; Creative_Observation: Creative fatigue appeared after week three.",
+      "metadata": {
+        "chunk_overlap": 150,
+        "file": "sales.csv",
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "source_type": "csv",
+        "row": 4,
+        "chunk_size": 1000,
+        "type": "csv",
+        "unit_index": 2,
+        "chunk_index": 0
+      },
+      "distance": 0.28486889600753784
+    },
+    {
+      "chunk_id": "d35115c6-4cbd-4f7b-9e52-e9f3bdd728ba",
+      "text": "Campaign_ID: CMP-002; Advertiser: BluePeak Travel; Campaign_Name: Weekend Escapes; Region: West; Channel: Podcast; Impressions: 400000; Clicks: 8000; Spend_USD: 45000; Conversions: 600; Revenue_USD: 90000; Objective: Mobile bookings; Creative_Observation: Attribution lag was reported on mobile bookings.",
+      "metadata": {
+        "file": "sales.csv",
+        "chunk_size": 1000,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "unit_index": 1,
+        "source_type": "csv",
+        "type": "csv",
+        "chunk_overlap": 150,
+        "chunk_index": 0,
+        "row": 3
+      },
+      "distance": 0.36581701040267944
+    },
+    {
+      "chunk_id": "10455786-562d-4a8c-9719-c6eb740c7c49",
+      "text": "Campaign_ID: CMP-001; Advertiser: Horizon Fitness; Campaign_Name: New Year Momentum; Region: East; Channel: Streaming Audio; Impressions: 500000; Clicks: 12500; Spend_USD: 50000; Conversions: 1000; Revenue_USD: 120000; Objective: Trial subscriptions; Creative_Observation: Host-read creative drove strong trial intent.",
+      "metadata": {
+        "chunk_size": 1000,
+        "chunk_index": 0,
+        "source_type": "csv",
+        "unit_index": 0,
+        "row": 2,
+        "chunk_overlap": 150,
+        "file": "sales.csv",
+        "type": "csv",
+        "chunking_policy": "small_medium_fixed_size_with_overlap"
+      },
+      "distance": 0.3680017590522766
+    },
+    {
+      "chunk_id": "f3d415e8-8458-4448-ac0a-41a61786fbe8",
+      "text": "LumaWave Ads - Campaign Optimization Meeting Notes Meeting date: 2026-07-15 Status: Fabricated capstone test data Participants - Campaign Operations - Measurement - Account Strategy - Creative Quality Campaign observations 1. BluePeak Travel (CMP-002) Mobile booking attribution events are arriving late. The measurement team will validate the server-to-server event mapping before the renewal review. 2. GreenFork Market (CMP-003) The team observed creative fatigue after week three. The next flight should rotate two new messages and run a controlled incrementality test. 3. NovaLearn (CMP-004) The bilingual creative produced the strongest completion-rate improvement in the East region. Account Strategy will prepare a language-segment comparison. 4. CloudCart (CMP-007) Audience overlap increased average frequency. Campaign Operations will broaden audience segments and enforce the standard frequency cap. 5. WellSpring Health (CMP-008) Contextual wellness podcast placements performed best.",
+      "metadata": {
+        "chunk_overlap": 150,
+        "source_type": "txt",
+        "file": "notes.txt",
+        "chunk_index": 0,
+        "type": "txt",
+        "chunk_size": 1000,
+        "chunking_policy": "small_medium_fixed_size_with_overlap",
+        "unit_index": 0
+      },
+      "distance": 0.37687259912490845
+    }
+  ],
+  "status": "answered",
+  "trace": [
+    "Validator(input)",
+    "Planner(route=rag)",
+    "Retriever",
+    "Reasoner",
+    "Responder",
+    "Validator(output)"
+  ]
+}

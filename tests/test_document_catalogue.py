@@ -11,11 +11,19 @@ def test_document_catalogue_stores_and_returns_record() -> None:
         stored_path="data/uploads/doc-1.txt",
         extracted_unit_count=1,
         tabular_schema_count=0,
+        content_hash="hash-1",
     )
 
     assert catalogue.get("doc-1") == record
     assert catalogue.list() == [record]
     assert record.uploaded_at
+    assert record.content_hash == "hash-1"
+    assert catalogue.find_by_content_hash("hash-1") == record
+
+    removed_record = catalogue.remove("doc-1")
+
+    assert removed_record == record
+    assert catalogue.get("doc-1") is None
 
 
 def test_document_catalogue_persists_records(tmp_path) -> None:
@@ -29,9 +37,11 @@ def test_document_catalogue_persists_records(tmp_path) -> None:
         stored_path="data/uploads/doc-1.txt",
         extracted_unit_count=1,
         tabular_schema_count=0,
+        content_hash="hash-1",
     )
 
     reloaded_catalogue = DocumentCatalogue(storage_path)
 
     assert reloaded_catalogue.get("doc-1") is not None
     assert reloaded_catalogue.get("doc-1").filename == "notes.txt"
+    assert reloaded_catalogue.find_by_content_hash("hash-1").document_id == "doc-1"

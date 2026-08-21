@@ -1,10 +1,15 @@
 from dataclasses import dataclass
 
 from app.core.config import Settings
+from app.core.logging_config import get_logger
 from app.services.chunking import chunk_document
 from app.services.embedding_service import OllamaEmbeddingService
 from app.services.loaders import LoadedDocument
 from app.services.vector_store import VectorStore
+from app.utils.safe_logging import safe_log_fields
+
+
+logger = get_logger()
 
 
 @dataclass(frozen=True)
@@ -36,7 +41,28 @@ class DocumentIndexingService:
             very_small_document_threshold=self._settings.very_small_document_threshold,
             large_document_threshold=self._settings.large_document_threshold,
         )
+        logger.info(
+            "indexing_chunks_created %s",
+            safe_log_fields(
+                {
+                    "filename": document.filename,
+                    "source_type": document.source_type,
+                    "extracted_unit_count": len(document.units),
+                    "chunk_count": len(chunks),
+                }
+            ),
+        )
         embeddings = self._embedding_service.embed_texts([chunk.text for chunk in chunks])
         chunk_count = self._vector_store.add_chunks(chunks, embeddings)
+        logger.info(
+            "indexing_completed %s",
+            safe_log_fields(
+                {
+                    "filename": document.filename,
+                    "source_type": document.source_type,
+                    "indexed_chunk_count": chunk_count,
+                }
+            ),
+        )
 
         return IndexingResult(chunk_count=chunk_count)

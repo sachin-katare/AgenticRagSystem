@@ -51,11 +51,10 @@ class QueryClassifier:
 
 def _is_ambiguous(question: str) -> bool:
     ambiguous_questions = {
-        "tell me about sales",
-        "show sales",
+        "tell me about data",
+        "show data",
         "summarize data",
         "analyze data",
-        "tell me about renewals",
     }
     return question in ambiguous_questions
 
@@ -71,8 +70,6 @@ def _has_calculation_intent(question: str) -> bool:
         "lowest",
         "maximum",
         "minimum",
-        "which region",
-        "which channel",
     ]
     return any(phrase in question for phrase in calculation_phrases)
 
@@ -90,7 +87,5 @@ def _has_meaning_intent(question: str) -> bool:
         "describe",
         "reported",
         "risk",
-        "migration delay",
-        "attribution",
     ]
     return any(phrase in question for phrase in meaning_phrases)

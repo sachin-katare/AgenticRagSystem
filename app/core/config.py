@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -9,10 +10,21 @@ class Settings(BaseSettings):
     app_name: str = "Agentic RAG System"
     llm_provider: str = "ollama"
     ollama_base_url: str = "http://localhost:11434"
-    ollama_chat_model: str = "llama3.2:3b"
-    ollama_embedding_model: str = "nomic-embed-text"
+    ollama_chat_model: str = Field(
+        default="llama3.2:3b",
+        validation_alias=AliasChoices("OLLAMA_CHAT_MODEL", "CHAT_MODEL"),
+    )
+    ollama_embedding_model: str = Field(
+        default="nomic-embed-text",
+        validation_alias=AliasChoices("OLLAMA_EMBEDDING_MODEL", "EMBEDDING_MODEL"),
+    )
     chroma_persist_directory: str = "data/chroma"
     upload_directory: str = "data/uploads"
+    log_directory: str = "logs"
+    log_file: str = "app.log"
+    error_log_file: str = "error.log"
+    log_max_bytes: int = 10 * 1024 * 1024
+    log_backup_count: int = 5
     max_upload_mb: int = 10
     chunk_size: int = 1000
     chunk_overlap: int = 150

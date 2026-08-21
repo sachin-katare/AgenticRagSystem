@@ -40,7 +40,7 @@ def test_query_classifier_routes_meaning_plus_count_to_hybrid() -> None:
 def test_query_classifier_routes_broad_question_to_clarification() -> None:
     classifier = QueryClassifier()
 
-    classification = classifier.classify("Tell me about sales")
+    classification = classifier.classify("Tell me about data")
 
     assert classification.route == "clarification"
     assert "too broad" in classification.reason

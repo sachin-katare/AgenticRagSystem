@@ -1,11 +1,15 @@
 from fastapi import APIRouter, HTTPException, status
 
 from app.core.config import get_settings
+from app.core.logging_config import get_logger
 from app.models.schemas import SearchMatch, SearchRequest, SearchResponse
+from app.services.exceptions import ExternalServiceError
 from app.services.search_service import SearcherService
+from app.utils.safe_logging import safe_log_fields
 
 
 router = APIRouter()
+logger = get_logger()
 
 searcher_service_override: SearcherService | None = None
 
@@ -30,6 +34,15 @@ def search_documents(request: SearchRequest) -> SearchResponse:
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(exc),
+        ) from exc
+    except ExternalServiceError as exc:
+        logger.error(
+            "search_service_unavailable %s",
+            safe_log_fields({"route": "/search", "reason": str(exc)}),
+        )
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail=str(exc),
         ) from exc
 

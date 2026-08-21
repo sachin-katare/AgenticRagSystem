@@ -70,4 +70,5 @@ class AskTableResponse(BaseModel):
     question: str
     route: str
     result: dict | float | int | str
+    answer: str
     explanation: str

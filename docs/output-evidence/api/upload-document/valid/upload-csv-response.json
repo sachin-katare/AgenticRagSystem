@@ -1,0 +1,9 @@
+{
+  "document_id": "4ec47898-5762-4f92-80c9-b84b6c08d437",
+  "filename": "sales.csv",
+  "source_type": "csv",
+  "extracted_unit_count": 8,
+  "tabular_schema_count": 1,
+  "indexed_chunk_count": 8,
+  "status": "uploaded"
+}

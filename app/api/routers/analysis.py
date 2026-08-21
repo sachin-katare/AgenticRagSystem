@@ -74,5 +74,6 @@ def ask_table(request: AskTableRequest) -> AskTableResponse:
         question=result.question,
         route=result.route,
         result=result.result,
+        answer=result.answer,
         explanation=result.explanation,
     )

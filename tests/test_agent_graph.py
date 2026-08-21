@@ -42,19 +42,22 @@ class FakeTabularQuestionService:
                 question=question,
                 route="structured",
                 result={"Region": "South", "Revenue_USD": 337500.0},
+                answer="The structured table result is Region: South, Revenue_USD: 337500.0.",
                 explanation="Structured calculation.",
             )
-        if "tell me about sales" in question.lower():
+        if "tell me about data" in question.lower():
             return TabularQuestionResult(
                 question=question,
                 route="clarification",
                 result="Please ask a more specific table question.",
+                answer="Please ask a more specific table question.",
                 explanation="Too broad.",
             )
         return TabularQuestionResult(
             question=question,
             route="hybrid",
             result=3,
+            answer="3 high-risk renewals mention attribution issues.",
             explanation="Hybrid calculation.",
         )
 
@@ -90,10 +93,15 @@ def test_agent_graph_answers_structured_question_with_trace() -> None:
     result = graph.invoke({"question": "Which region has the highest revenue?"})
 
     assert result["route"] == "structured"
+    assert result["status"] == "answered"
     assert result["result"] == {"Region": "South", "Revenue_USD": 337500.0}
+    assert result["answer"] == (
+        "The structured table result is Region: South, Revenue_USD: 337500.0. "
+        "Structured calculation."
+    )
     assert result["trace"] == [
         "Validator(input)",
-        "Planner",
+        "Planner(route=structured)",
         "Retriever",
         "Reasoner",
         "Responder",
@@ -115,10 +123,12 @@ def test_agent_graph_answers_hybrid_question_with_trace() -> None:
     result = graph.invoke({"question": "How many high-risk renewals mention attribution issues?"})
 
     assert result["route"] == "hybrid"
+    assert result["status"] == "answered"
     assert result["result"] == 3
+    assert result["answer"] == "3 high-risk renewals mention attribution issues. Hybrid calculation."
     assert result["trace"] == [
         "Validator(input)",
-        "Planner",
+        "Planner(route=hybrid)",
         "Retriever",
         "Reasoner",
         "Responder",
@@ -137,13 +147,13 @@ def test_agent_graph_routes_broad_question_to_clarification() -> None:
     )
     graph = build_agent_graph(get_settings(), nodes=nodes)
 
-    result = graph.invoke({"question": "Tell me about sales"})
+    result = graph.invoke({"question": "Tell me about data"})
 
     assert result["route"] == "clarification"
     assert result["status"] == "clarification"
     assert result["trace"] == [
         "Validator(input)",
-        "Planner",
+        "Planner(route=clarification)",
         "Reasoner",
         "Responder",
         "Validator(output)",
@@ -168,7 +178,7 @@ def test_agent_graph_answers_rag_question_with_six_agent_trace() -> None:
     assert result["citations"][0]["metadata"]["file"] == "policy.pdf"
     assert result["trace"] == [
         "Validator(input)",
-        "Planner",
+        "Planner(route=rag)",
         "Retriever",
         "Reasoner",
         "Responder",
